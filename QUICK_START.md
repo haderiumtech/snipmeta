@@ -1,6 +1,6 @@
 # 🚀 Quick Start Guide
 
-Get InstaTube running locally in 5 minutes!
+Get SNIPMETA running locally in 5 minutes!
 
 ## Prerequisites
 

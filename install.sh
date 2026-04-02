@@ -3,7 +3,7 @@
 
 set -e
 
-echo "🚀 InstaTube Installation Script"
+echo "🚀 SNIPMETA Installation Script"
 echo "=================================="
 echo ""
 
@@ -123,4 +123,4 @@ echo "3. Update .env file with production settings"
 echo "4. Verify app is running: pm2 logs instatube"
 echo "5. Check website: http://yourdomain.com"
 echo ""
-echo "🚀 Your InstaTube is ready!"
+echo "🚀 Your SNIPMETA is ready!"

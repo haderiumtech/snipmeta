@@ -1,4 +1,4 @@
-# 📊 InstaTube - Project Summary & Implementation Guide
+# 📊 SNIPMETA - Project Summary & Implementation Guide
 
 ## ✅ What Has Been Built
 

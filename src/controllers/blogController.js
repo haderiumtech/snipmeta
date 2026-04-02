@@ -186,7 +186,7 @@ const getCategory = async (req, res) => {
           slug: file.replace('.md', ''),
           title: data.title,
           description: data.description,
-          author: data.author || 'InstaTube Team',
+          author: data.author || 'SNIPMETA Team',
           date: data.date,
           category: data.category,
           image: data.image,

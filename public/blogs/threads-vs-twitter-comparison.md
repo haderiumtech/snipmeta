@@ -1,7 +1,7 @@
 ---
 title: "Threads vs Twitter/X - Complete 2024 Comparison Guide"
 description: "Compare Threads vs Twitter/X in detail. Features, user base, monetization, and which platform to choose in 2024."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-30"
 category: "Platform Guides"
 image: "/images/blog-threads-vs-twitter.jpg"
@@ -300,7 +300,7 @@ A: No, maintain presence on both for maximum reach.
 A: Both have concerns, but Threads integrates with Instagram policies.
 
 **Q: Can I download videos from both?**
-A: Yes! Use InstaTube for both Threads and Instagram videos.
+A: Yes! Use SNIPMETA for both Threads and Instagram videos.
 
 ## Conclusion
 
@@ -316,7 +316,7 @@ Both platforms have merits:
 ✅ Monitor growth on each
 ✅ Adapt content to platform
 
-**Ready to download videos from both platforms?** [Try InstaTube →](/download)
+**Ready to download videos from both platforms?** [Try SNIPMETA →](/download)
 
 ---
 

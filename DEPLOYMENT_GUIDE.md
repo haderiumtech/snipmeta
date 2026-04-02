@@ -1,6 +1,6 @@
 # 📚 DEPLOYMENT GUIDE - cPanel Hosting
 
-Complete step-by-step guide to deploy InstaTube on cPanel hosting.
+Complete step-by-step guide to deploy SNIPMETA on cPanel hosting.
 
 ## ⚙️ Prerequisites
 

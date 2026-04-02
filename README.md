@@ -1,4 +1,4 @@
-# 🎬 InstaTube - Instagram & Threads Video Downloader
+# 🎬 SNIPMETA - Instagram & Threads Video Downloader
 
 A production-ready, high-performance web application for downloading videos from Instagram and Threads. Built with HTML5, CSS3, Vanilla JavaScript, and Node.js/Express.
 

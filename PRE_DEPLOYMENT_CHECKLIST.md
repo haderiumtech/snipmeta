@@ -4,7 +4,7 @@
 
 ### Code & Configuration
 
-- [ ] Update brand name (InstaTube → Your Brand)
+- [ ] Update brand name (SNIPMETA → Your Brand)
   - [ ] public/index.html
   - [ ] public/pages/how-to-use.html
   - [ ] public/pages/privacy-policy.html

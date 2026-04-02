@@ -1,7 +1,7 @@
 ---
 title: "Best Time to Post on Instagram 2024 - Complete Timing Guide"
 description: "Discover the best times to post on Instagram for maximum engagement. Industry data, time zones, and posting strategy."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-26"
 category: "Content Strategy"
 image: "/images/blog-instagram-timing.jpg"

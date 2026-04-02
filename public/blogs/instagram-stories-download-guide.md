@@ -1,7 +1,7 @@
 ---
 title: "Instagram Stories - Complete Download & Save Guide 2024"
 description: "Learn how to download Instagram stories before they expire. Methods for saving stories permanently without posting to your account."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-22"
 category: "Download Guides"
 image: "/images/blog-stories.jpg"
@@ -76,4 +76,4 @@ Saving Instagram stories is now easier than ever. Choose the method that works b
 
 ---
 
-**Ready to download?** [Visit InstaTube →](/download)
+**Ready to download?** [Visit SNIPMETA →](/download)

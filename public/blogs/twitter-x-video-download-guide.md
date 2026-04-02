@@ -1,7 +1,7 @@
 ---
 title: "Twitter/X Video Download Guide - 2024 Tutorial"
 description: "Download videos from Twitter/X easily. Complete guide with multiple methods for saving tweets with videos."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-16"
 category: "Download Guides"
 image: "/images/blog-twitter.jpg"
@@ -145,4 +145,4 @@ Downloading Twitter/X videos is now easier than ever. Choose your preferred meth
 
 ---
 
-**Ready to download?** [Start with InstaTube →](/download)
+**Ready to download?** [Start with SNIPMETA →](/download)

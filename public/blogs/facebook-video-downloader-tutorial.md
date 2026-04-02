@@ -1,7 +1,7 @@
 ---
 title: "Facebook Video Downloader - Complete 2024 Tutorial"
 description: "Download Facebook videos with step-by-step instructions. Learn the best tools, methods, and tips for saving Facebook content."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-18"
 category: "Download Guides"
 image: "/images/blog-facebook.jpg"
@@ -108,4 +108,4 @@ Facebook video downloading is easy with the right tools. Choose the method that 
 
 ---
 
-**Ready to download?** [Try InstaTube →](/download)
+**Ready to download?** [Try SNIPMETA →](/download)

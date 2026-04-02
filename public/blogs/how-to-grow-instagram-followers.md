@@ -1,7 +1,7 @@
 ---
 title: "How to Grow Your Instagram Following - 10 Proven Strategies 2024"
 description: "Grow your Instagram followers organically with proven strategies. Learn content ideas, engagement tactics, and posting strategies."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-20"
 category: "Content Strategy"
 image: "/images/blog-grow-instagram.jpg"

@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  instatube:
+  snipmeta:
     build: .
-    container_name: instatube-app
+    container_name: snipmeta-app
     ports:
       - "3000:3000"
     environment:

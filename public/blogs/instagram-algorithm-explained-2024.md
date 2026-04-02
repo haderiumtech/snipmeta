@@ -1,7 +1,7 @@
 ---
 title: "Instagram Algorithm Explained 2024 - Complete Guide"
 description: "How does Instagram algorithm work? Complete breakdown of ranking factors, feed ranking, reels, and explorer algorithm 2024."
-author: "InstaTube Team"
+author: "SNIPMETA Team"
 date: "2024-03-24"
 category: "Platform Guides"
 image: "/images/blog-instagram-algorithm.jpg"
