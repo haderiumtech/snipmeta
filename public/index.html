@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fast, free Instagram & Threads video downloader. Download videos in MP4 format without watermarks. No registration needed.">
+    <meta name="keywords" content="Instagram video downloader, Threads video downloader, download Instagram reels, free video downloader">
+    <meta name="author" content="Your Company">
+    <meta name="theme-color" content="#6366f1">
+    <meta property="og:title" content="Instagram & Threads Video Downloader">
+    <meta property="og:description" content="Download videos from Instagram and Threads instantly">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Instagram & Threads Video Downloader",
+      "description": "Download videos from Instagram and Threads instantly",
+      "url": "https://yourdomain.com",
+      "applicationCategory": "UtilityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <title>Instagram & Threads Video Downloader | Free, Fast & Easy</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <a href="/">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 10c0-3.866-3.134-7-7-7s-7 3.134-7 7 3.134 7 7 7c.550 0 1.087-.065 1.611-.19.514 1.267 1.837 2.19 3.389 2.19 2.071 0 3.75-1.679 3.75-3.75 0-1.465-.844-2.735-2.063-3.347A6.968 6.968 0 0016 10z"></path>
+                        </svg>
+                        InstaTube
+                    </a>
+                </div>
+
+                <nav class="navbar-menu">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/blog" class="nav-link">Blog</a>
+                    <a href="/how-to-use" class="nav-link">How to Use</a>
+                    <a href="/privacy-policy" class="nav-link">Privacy</a>
+                </nav>
+
+                <div class="navbar-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Download Videos from Instagram, Twitter & Facebook</h1>
+                <p class="hero-subtitle">Fast, free, and easy. No registration required. Download Reels, Tweets, Stories, and more.</p>
+
+                <div class="download-box">
+                    <form id="downloadForm" class="download-form">
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="urlInput" 
+                                class="url-input" 
+                                placeholder="Paste Instagram, Twitter, or Facebook URL here..."
+                                autocomplete="off"
+                                required
+                            >
+                            <button type="submit" class="btn-download" id="downloadBtn">
+                                <span class="btn-text">Download</span>
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="input-help" id="inputHelp"></p>
+                    </form>
+
+                    <!-- Video Preview Section -->
+                    <div id="previewSection" class="preview-section" style="display: none;">
+                        <div class="preview-container">
+                            <img id="videoThumbnail" class="video-thumbnail" alt="Video thumbnail">
+                            <div class="video-info">
+                                <p class="video-title" id="videoTitle"></p>
+                                <div class="download-actions">
+                                    <a id="downloadLink" class="btn-primary" download>Download MP4</a>
+                                    <button class="btn-secondary" id="copyLinkBtn">Copy Link</button>
+                                    <button class="btn-secondary" id="newDownloadBtn">← New Download</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading Spinner -->
+                    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Fetching video...</p>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8 10 1 17"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Download videos in seconds with our optimized servers</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M10 19l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>No Watermarks</h3>
+                    <p>Download clean videos without any watermarks added</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"></path>
+                        </svg>
+                    </div>
+                    <h3>100% Free</h3>
+                    <p>No hidden charges, no premium plans, always free</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4-5h8M12 7v5"></path>
+                        </svg>
+                    </div>
+                    <h3>Easy to Use</h3>
+                    <p>Simple interface, just paste and download</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Secure & Safe</h3>
+                    <p>Your privacy is protected. No data stored</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>All Devices</h3>
+                    <p>Works on desktop, tablet, and mobile devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Copy the Link</h3>
+                    <p>Go to Instagram or Threads and copy the URL of the video you want to download</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Paste the URL</h3>
+                    <p>Paste the link into the input field on our website</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Download</h3>
+                    <p>Click the download button and get your video in MP4 format</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Is this tool free?</h3>
+                    <p>Yes! Our Instagram and Threads video downloader is completely free to use. No hidden charges or premium plans.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you store my videos?</h3>
+                    <p>No, we don't store any videos on our servers. The download is direct from Instagram/Threads to your device.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Which formats are supported?</h3>
+                    <p>We support Instagram posts, reels, stories (if downloadable), and Threads videos in MP4 format.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is it legal to download videos?</h3>
+                    <p>Personal use downloads are generally legal, but respect content creators' rights. Check our Terms of Service for details.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does it work on mobile?</h3>
+                    <p>Yes! Our website is fully optimized for mobile devices. Download videos directly from your phone.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What should I do if download fails?</h3>
+                    <p>Make sure the URL is correct, the video is public, and copied with the full link. If issues persist, try refreshing the page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>InstaTube</h4>
+                    <p>Fast & free Instagram & Threads video downloader</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms & Conditions</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 InstaTube. All rights reserved. | Not affiliated with Instagram or Meta.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

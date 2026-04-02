@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read our blog for tips on downloading videos from Instagram, Twitter, and Facebook. Learn SEO, content strategy, and social media best practices.">
+    <meta name="keywords" content="blog, instagram tips, video download guide, social media, content strategy">
+    <meta name="author" content="InstaTube Team">
+    <meta name="theme-color" content="#6366f1">
+    <meta property="og:title" content="InstaTube Blog - Tips & Guides">
+    <meta property="og:description" content="Read guides on downloading videos and social media strategy">
+    <meta property="og:type" content="website">
+
+    <title>Blog - InstaTube | Instagram & Video Download Guides</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .blog-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .blog-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: var(--bg-secondary);
+            color: var(--text-color);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-color);
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        .blog-card-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .no-posts {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+
+        .no-posts svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+        }
+
+        .spinner {
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-controls {
+                flex-direction: column;
+            }
+
+            .search-box, .category-filter {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <a href="/">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 10c0-3.866-3.134-7-7-7s-7 3.134-7 7 3.134 7 7 7c.550 0 1.087-.065 1.611-.19.514 1.267 1.837 2.19 3.389 2.19 2.071 0 3.75-1.679 3.75-3.75 0-1.465-.844-2.735-2.063-3.347A6.968 6.968 0 0016 10z"></path>
+                        </svg>
+                        InstaTube
+                    </a>
+                </div>
+
+                <nav class="navbar-menu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/blog" class="nav-link active">Blog</a>
+                    <a href="/how-to-use" class="nav-link">How to Use</a>
+                    <a href="/privacy-policy" class="nav-link">Privacy</a>
+                </nav>
+
+                <div class="navbar-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>InstaTube Blog</h1>
+            <p>Learn tips and tricks for downloading videos, social media strategy, and content creation</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <main class="blog-container">
+        <!-- Search and Filters -->
+        <div class="blog-controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search blog posts...">
+            </div>
+            <div class="category-filter" id="categoryFilter">
+                <button class="category-btn active" data-category="all">All</button>
+            </div>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-grid" id="blogGrid">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <!-- No Posts Message -->
+        <div class="no-posts" id="noPosts" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+            <h3>No posts found</h3>
+            <p>Try adjusting your search or filter</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>InstaTube</h3>
+                    <p>Download videos from Instagram, Twitter, and Facebook instantly</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 InstaTube. All rights reserved. | <a href="/privacy-policy">Privacy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        class BlogManager {
+            constructor() {
+                this.allPosts = [];
+                this.filteredPosts = [];
+                this.searchTerm = '';
+                this.selectedCategory = 'all';
+                this.init();
+            }
+
+            async init() {
+                await this.loadPosts();
+                this.setupEventListeners();
+                this.renderPosts();
+            }
+
+            async loadPosts() {
+                try {
+                    const response = await fetch('/api/blog');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.allPosts = data.posts;
+                        this.filteredPosts = data.posts;
+                        this.setupCategories();
+                    }
+                } catch (error) {
+                    console.error('Error loading blog posts:', error);
+                    document.getElementById('blogGrid').innerHTML = `
+                        <div class="no-posts">
+                            <h3>Error loading posts</h3>
+                            <p>Please try again later</p>
+                        </div>
+                    `;
+                }
+            }
+
+            setupCategories() {
+                const categories = [...new Set(this.allPosts.map(post => post.category))];
+                const filterContainer = document.getElementById('categoryFilter');
+                
+                categories.forEach(category => {
+                    const btn = document.createElement('button');
+                    btn.className = 'category-btn';
+                    btn.textContent = category;
+                    btn.dataset.category = category;
+                    btn.addEventListener('click', () => this.filterByCategory(category, btn));
+                    filterContainer.appendChild(btn);
+                });
+            }
+
+            setupEventListeners() {
+                document.getElementById('searchInput').addEventListener('input', (e) => {
+                    this.searchTerm = e.target.value.toLowerCase();
+                    this.filterPosts();
+                });
+            }
+
+            filterByCategory(category, button) {
+                this.selectedCategory = category;
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                this.filterPosts();
+            }
+
+            filterPosts() {
+                this.filteredPosts = this.allPosts.filter(post => {
+                    const matchesSearch = 
+                        post.title.toLowerCase().includes(this.searchTerm) ||
+                        post.description.toLowerCase().includes(this.searchTerm);
+                    
+                    const matchesCategory = 
+                        this.selectedCategory === 'all' || 
+                        post.category === this.selectedCategory;
+                    
+                    return matchesSearch && matchesCategory;
+                });
+
+                this.renderPosts();
+            }
+
+            renderPosts() {
+                const blogGrid = document.getElementById('blogGrid');
+                const noPosts = document.getElementById('noPosts');
+
+                if (this.filteredPosts.length === 0) {
+                    blogGrid.style.display = 'none';
+                    noPosts.style.display = 'block';
+                    return;
+                }
+
+                blogGrid.style.display = 'grid';
+                noPosts.style.display = 'none';
+                blogGrid.innerHTML = this.filteredPosts.map(post => `
+                    <a href="/blog-post?slug=${post.slug}" class="blog-card">
+                        <div class="blog-card-image">
+                            ${post.image ? `<img src="${post.image}" alt="${post.title}">` : '📝'}
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category">${post.category}</span>
+                                <span>${new Date(post.date).toLocaleDateString()}</span>
+                            </div>
+                            <h3 class="blog-card-title">${post.title}</h3>
+                            <p class="blog-card-description">${post.description}</p>
+                            <div class="blog-card-footer">
+                                <span class="read-time">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    ${post.readTime} min read
+                                </span>
+                                <span>By ${post.author}</span>
+                            </div>
+                        </div>
+                    </a>
+                `).join('');
+            }
+        }
+
+        // Theme toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                const currentTheme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                themeToggle.addEventListener('click', () => {
+                    const theme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = theme === 'light' ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+        });
+
+        // Initialize blog manager
+        new BlogManager();
+    </script>
+</body>
+</html>
