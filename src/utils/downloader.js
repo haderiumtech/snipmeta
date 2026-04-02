@@ -23,7 +23,7 @@ const downloadVideo = async (url) => {
 
     // This uses yt-dlp which must be installed on the server
     // Supports: Instagram, Twitter/X, Facebook, and many other platforms
-    const ytDlpPath = process.env.YT_DLP_PATH || 'yt-dlp';
+    const ytDlpPath = process.env.YT_DLP_PATH || 'd:/snipmeta/.venv/Scripts/yt-dlp.exe';
     const { stdout } = await execAsync(
       `"${ytDlpPath}" -j --no-warnings "${url}"`,
       { timeout: parseInt(process.env.API_TIMEOUT) || 30000 }
@@ -46,6 +46,9 @@ const downloadVideo = async (url) => {
     if (error.message.includes('Threads')) {
       throw new Error(error.message);
     }
+    if (error.message.includes('Private') || error.message.includes('private')) {
+      throw new Error('Uh-Oh! This video might be private and not public. Try downloading a public video instead.');
+    }
     if (error.message.includes('yt-dlp')) {
       throw new Error('Video extraction failed. Please ensure yt-dlp is installed.');
     }
@@ -54,6 +57,9 @@ const downloadVideo = async (url) => {
     }
     if (error.message.includes('Unsupported')) {
       throw new Error('This URL format is not supported. Supported platforms: Instagram, Reels, Twitter, Facebook');
+    }
+    if (error.message.includes('ERROR: Unable to download') || error.message.includes('not available')) {
+      throw new Error('Uh-Oh! This video might be private and not public. Try downloading a public video instead.');
     }
 
     throw new Error('Failed to fetch video. Please check the URL and try again.');

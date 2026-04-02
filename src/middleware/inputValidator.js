@@ -11,7 +11,8 @@ const validateURL = (url) => {
   const threadsPattern = /^(https?:\/\/)?(www\.)?threads\.(net|com)\/@[\w.]+\/post\/[\w]+\/?(\?.*)?$/i;
   const shortInstagramPattern = /^(https?:\/\/)?(www\.)?ig\.me\/[\w]+\/?(\?.*)?$/i;
   const twitterPattern = /^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/\w+\/status\/\d+\/?(\?.*)?$/i;
-  const facebookPattern = /^(https?:\/\/)?(www\.)?facebook\.com\/.+\/videos?\/[\d.]+\/?(\?.*)?$/i;
+  // Facebook: supports video.php, watch, share/r, reel, videos URLs
+  const facebookPattern = /^(https?:\/\/)?(www\.)?facebook\.com\/.*?(watch|video|share|reel)/i;
 
   if (!instagramPattern.test(url) && !threadsPattern.test(url) && !shortInstagramPattern.test(url) && 
       !twitterPattern.test(url) && !facebookPattern.test(url)) {

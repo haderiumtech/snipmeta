@@ -85,17 +85,20 @@ class VideoDownloader {
     }
 
     validateURL(url) {
-        const instagramPattern = /^(https?:\/\/)?(www\.)?instagram\.com\/(p|reel|tv)\/[\w-]+\/?(\?.*)?$/i;
-        const threadsPattern = /^(https?:\/\/)?(www\.)?threads\.net\/@[\w.]+\/post\/[\w]+\/?(\?.*)?$/i;
+        const instagramPattern = /^(https?:\/\/)?(www\.)?instagram\.com\/(p|reel|tv|stories)\/[\w-]+\/?(\?.*)?$/i;
+        const threadsPattern = /^(https?:\/\/)?(www\.)?threads\.(net|com)\/@[\w.]+\/post\/[\w]+\/?(\?.*)?$/i;
         const shortInstagramPattern = /^(https?:\/\/)?(www\.)?ig\.me\/[\w]+\/?(\?.*)?$/i;
+        const twitterPattern = /^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/\w+\/status\/\d+\/?(\?.*)?$/i;
+        const facebookPattern = /^(https?:\/\/)?(www\.)?facebook\.com\/.*?(watch|video|share|reel)/i;
 
         if (!url) {
             this.showError('Please enter a URL');
             return false;
         }
 
-        if (!instagramPattern.test(url) && !threadsPattern.test(url) && !shortInstagramPattern.test(url)) {
-            this.showError('Please enter a valid Instagram or Threads URL');
+        if (!instagramPattern.test(url) && !threadsPattern.test(url) && !shortInstagramPattern.test(url) && 
+            !twitterPattern.test(url) && !facebookPattern.test(url)) {
+            this.showError('Please enter a valid Instagram, Threads, Twitter, or Facebook URL');
             return false;
         }
 

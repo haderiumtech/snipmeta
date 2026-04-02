@@ -371,6 +371,7 @@ img {
 
 .btn-download:hover {
     background-color: var(--primary-dark);
+    color: var(--text-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -397,6 +398,7 @@ img {
 
 .btn-primary:hover {
     background-color: var(--primary-dark);
+    color: var(--text-light);
     transform: translateY(-1px);
 }
 
@@ -466,13 +468,22 @@ img {
     flex-direction: column;
     gap: var(--spacing-md);
     align-items: flex-start;
+    width: 100%;
 }
 
 .video-thumbnail {
     width: 100%;
-    max-height: 300px;
+    max-height: 400px;
+    height: auto;
     border-radius: var(--radius-lg);
     object-fit: cover;
+    object-position: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    display: block;
+    margin-bottom: var(--spacing-md);
+    background-color: var(--bg-secondary);
+    min-height: 200px;
 }
 
 .video-info {
@@ -552,8 +563,8 @@ body.dark-mode .error-message {
 }
 
 .feature-icon {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     background-color: var(--primary);
     color: white;
     border-radius: var(--radius-lg);
@@ -564,8 +575,8 @@ body.dark-mode .error-message {
 }
 
 .feature-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 
 .feature-card h3 {
@@ -750,6 +761,10 @@ body.dark-mode .error-message {
         width: 100%;
     }
 
+    .video-thumbnail {
+        max-height: 250px;
+    }
+
     .features-grid,
     .steps-grid,
     .faq-grid {
@@ -766,6 +781,21 @@ body.dark-mode .error-message {
 
     .download-box {
         padding: var(--spacing-lg);
+    }
+
+    .feature-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .feature-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-icon {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -809,6 +839,25 @@ body.dark-mode .error-message {
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+    }
+
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .feature-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .btn-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .video-thumbnail {
+        max-height: 200px;
     }
 }
 
